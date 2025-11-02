@@ -1,0 +1,21 @@
+{
+    "name": "Gerador de Link WhatsApp",
+    "short_name": "Gerador Zap",
+    "description": "Crie links e QR Codes para WhatsApp com templates e preview.",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#25D366",
+    "theme_color": "#25D366",
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
