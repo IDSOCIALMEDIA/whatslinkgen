@@ -1,0 +1,298 @@
+/* Importa uma fonte bonita */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Variáveis de Cor (Tema Claro - Padrão) */
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg-color: #ffffff;
+    --text-color: #111827;
+    --text-light-color: #6b7280;
+    --border-color: #e5e7eb;
+    --primary-color: #10B981;
+    --primary-hover: #059669;
+    --secondary-color: #6b7280;
+    --secondary-hover: #4b5563;
+    --whatsapp-bg: #E5DDD5;
+    --whatsapp-msg-bg: #DCF8C6;
+    
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* Tema Escuro */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg-color: #1e1e1e;
+    --text-color: #e5e7eb;
+    --text-light-color: #9ca3af;
+    --border-color: #374151;
+    --primary-color: #25D366; /* Cor do WhatsApp */
+    --primary-hover: #1DB954;
+    --whatsapp-bg: #0d1418;
+    --whatsapp-msg-bg: #056162;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--text-light-color);
+}
+
+.btn-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilos de Formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-light-color);
+}
+
+input[type="tel"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="tel"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Templates */
+.templates-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.template-btn, .custom-template-btn {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+.template-btn:hover, .custom-template-btn:hover {
+    background-color: var(--border-color);
+}
+
+/* Template Customizado com botão de deletar */
+.custom-template-item {
+    display: flex;
+    gap: 5px;
+}
+.delete-template {
+    background-color: #ef4444;
+    color: white;
+    font-weight: 700;
+    padding: 0 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+
+/* Seção de Preview */
+.whatsapp-preview {
+    background-color: var(--whatsapp-bg);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgU3u1AAAATElEQVQIW2NkwAL+////z4gsAzJINhoGc0D4f4wUoD6mAmkY/0M30gAEYiIgGmAN0hIgbgOKCUgNQG1AQpGkQXRQdICmLsA6rAcBABc+EcKXTfYoAAAAAElFTkSuQmCC");
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+.whatsapp-chat {
+    background-color: var(--whatsapp-msg-bg);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 8px 8px 8px 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Mantém quebras de linha */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.result-group {
+    display: flex;
+    gap: 10px;
+}
+
+.result-group input {
+    flex-grow: 1;
+    background-color: var(--bg-color);
+}
+.result-group button {
+    flex-shrink: 0;
+    background-color: var(--secondary-color);
+    color: white;
+}
+.result-group button:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* QR Code */
+#qrcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* Fundo branco é melhor para leitura */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+#qrcode canvas {
+    border-radius: 8px; /* Arredonda o canvas */
+}
+
+.qr-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+.qr-options .form-group {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    padding: 2px;
+    border-radius: 4px;
+    background-color: var(--bg-color);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .btn-toggle {
+        position: static;
+        margin-top: 15px;
+    }
+}
